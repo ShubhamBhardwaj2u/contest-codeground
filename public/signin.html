@@ -10,28 +10,75 @@
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="cssfile\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="cssfile/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="cssfile\signin.css">
+    <link rel="stylesheet" type="text/css" href="cssfile/signin.css">
 
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
+
+      <form class="form-signin">
+        <div id="form" >
+        <img class="mb-4" src="brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="authanticate()">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+      <div id="welcome" style="display: none">
+      <img class="mb-4" src="brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Welcome ! </h4><br><h3 style="font-size: 100%; " id='name'></h3>
+        <p>Aww yeah, you have successfully logged in to your account. your account's safety is our first priority so, Please make sure you don't share your account information to others.</p>
+        <hr>
+        <p class="mb-0">Code Ground never ask any information of our users through call or message.</p>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="button" onclick="signOut()">Sign Out</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-    </form>
+    </div>
+
+      </form>
+
   </body>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCdoZ6E7inE90uyyoCOGwoniANNJfz4rRI",
+    authDomain: "contest-b7353.firebaseapp.com",
+    databaseURL: "https://contest-b7353.firebaseio.com",
+    projectId: "contest-b7353",
+    storageBucket: "contest-b7353.appspot.com",
+    messagingSenderId: "855062150740",
+    appId: "1:855062150740:web:be01f036b8d6482d7af7c1",
+    measurementId: "G-QKCHJE6Q9K"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript" src="jsfiles/signin.js"></script>
+
 </html>
