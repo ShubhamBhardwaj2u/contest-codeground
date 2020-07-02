@@ -1,2 +1,2 @@
 # contest-codeground
-I am working to develop a website to host competitions and upload related files and folder.
+I am working to develop a website to host competitions So, uploaded related files and folder.
